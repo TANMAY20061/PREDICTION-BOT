@@ -7,7 +7,7 @@ from flask import Flask
 from multiprocessing import Process
 
 # Bot Token
-TOKEN = "7368044652:AAGiUEjQzASMkUfK1hV73oMczmIYpiQ9ruo"
+TOKEN = "8169420460:AAEs6bEoqdSSqchcpRa-y0h0ercCk3exZ3w"
 
 # Mandatory channel for verification
 MANDATORY_CHANNEL = "@GODPREDICTION69"
