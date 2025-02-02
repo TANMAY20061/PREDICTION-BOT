@@ -23,8 +23,8 @@ CHANNELS = {
 RESULT_IMAGES = {
     "BIG": "https://t.me/PREDICTIONZRX/22",
     "SMALL": "https://t.me/PREDICTIONZRX/20",
-    "RED": "https://t.me/PREDICTIONZRX/13",
-    "GREEN": "https://t.me/PREDICTIONZRX/12",
+    "RED": "https://t.me/PREDICTIONZRX/26",
+    "GREEN": "https://t.me/PREDICTIONZRX/27",
 }
 
 # Store last period results
