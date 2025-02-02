@@ -7,7 +7,7 @@ from flask import Flask
 from multiprocessing import Process
 
 # Bot Token
-TOKEN = "8169420460:AAEs6bEoqdSSqchcpRa-y0h0ercCk3exZ3w"
+TOKEN = "8169420460:AAEqGTtMwRIJj2FiR3R7-vPQ6BhQJteYEgA"
 
 # Mandatory channel for verification
 MANDATORY_CHANNEL = "@GODPREDICTION69"
@@ -141,7 +141,8 @@ async def prediction_callback(update: Update, context: CallbackContext):
         # Send a sticker after the result
         STICKER_ID = "CAACAgUAAxkBAAENsJxnnkzNiI3lAQwoOKLAfbJv6F1lsQACUgMAAtKqAVVNzYqUuDTsQjYE"  # Replace with your sticker ID
         await query.message.reply_sticker(sticker=STICKER_ID)
-        App Initialization
+
+# Flask App Initialization
 flask_app = Flask(__name__)
 
 @flask_app.route('/')
