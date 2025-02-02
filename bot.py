@@ -21,8 +21,8 @@ CHANNELS = {
 
 # Image URLs for results
 RESULT_IMAGES = {
-    "BIG": "https://t.me/PREDICTIONZRX/10",
-    "SMALL": "https://t.me/PREDICTIONZRX/11",
+    "BIG": "https://t.me/PREDICTIONZRX/22",
+    "SMALL": "https://t.me/PREDICTIONZRX/20",
     "RED": "https://t.me/PREDICTIONZRX/13",
     "GREEN": "https://t.me/PREDICTIONZRX/12",
 }
