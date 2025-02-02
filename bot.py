@@ -28,7 +28,7 @@ RESULT_IMAGES = {
 }
 
 # Store last period results
-last_period_results = {}
+user_last_period_results = {}
 
 # Get current period number
 def get_period():
@@ -110,14 +110,14 @@ async def prediction_callback(update: Update, context: CallbackContext):
         await send_join_message(query)
         return
 
-    if current_period in last_period_results:
-        # If the result for this period is already given, show timer
+    # Ensure each user gets their own prediction
+    if user_id in user_last_period_results and user_last_period_results[user_id]["period"] == current_period:
         remaining_time = get_remaining_time()
         await query.answer(f"⏳ Wait for {remaining_time} seconds to get the next result.", show_alert=True)
     else:
-        # Generate new result for the current period
+        # Generate a new result for the user
         result, image_url = get_wingo_result()
-        last_period_results[current_period] = result
+        user_last_period_results[user_id] = {"period": current_period, "result": result}
 
         keyboard = [[InlineKeyboardButton("𝗡𝗘𝗫𝗧 🔄", callback_data="predict")]]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -141,8 +141,7 @@ async def prediction_callback(update: Update, context: CallbackContext):
         # Send a sticker after the result
         STICKER_ID = "CAACAgUAAxkBAAENsJxnnkzNiI3lAQwoOKLAfbJv6F1lsQACUgMAAtKqAVVNzYqUuDTsQjYE"  # Replace with your sticker ID
         await query.message.reply_sticker(sticker=STICKER_ID)
-
-# Flask App Initialization
+        App Initialization
 flask_app = Flask(__name__)
 
 @flask_app.route('/')
